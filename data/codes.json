@@ -19,11 +19,6 @@
             "name": "RSA",
             "file": "rsa.py",
             "path": "data/rsa.py"
-        },
-        {
-            "name": "Another Program",
-            "file": "another_program.c",
-            "path": "data/another_program.c"
         }
     ]
 }
