@@ -5,10 +5,16 @@ void encrypt(char text[], int shift) {
         char ch = text[i];
         if (ch >= 'A' && ch <= 'Z') {
             ch = (ch - 'A' + shift) % 26 + 'A';
+            //ch = (ch - 'A' - shift + 26) % 26 + 'A';
+            
         }
         else if (ch >= 'a' && ch <= 'z') {
             ch = (ch - 'a' + shift) % 26 + 'a';
+            //ch = (ch - 'a' - shift + 26) % 26 + 'a';
+        
+            
         }
+        
         text[i] = ch;
     }
 }
