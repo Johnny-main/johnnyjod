@@ -6,13 +6,14 @@
     <title>VS Code-like Code Preview</title>
     <style>
         /* General Styling */
+        <style>
+        /* General Styling */
         body {
             font-family: 'Consolas', 'Courier New', monospace;
             margin: 0;
             padding: 0;
             background-color: #1e1e1e;
             color: #d4d4d4;
-            display: none; /* Initially hide the body */
             height: 100vh;
             overflow: hidden;
         }
@@ -52,7 +53,14 @@
         #password-container button:hover {
             background-color: #005f99;
         }
-
+        #password-container p {
+            color: red;
+            display: none;
+        }
+        /* Hide main content initially */
+        #main-content {
+            display: none;
+        }
         /* Sidebar Styling */
         #sidebar {
             background-color: #252526;
