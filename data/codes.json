@@ -11,9 +11,9 @@
             "path": "data/prod.py"
         },
         {
-            "name": "md5",
-            "file": "md5.py",
-            "path": "data/rsa.py"
+            "name": "md",
+            "file": "md.py",
+            "path": "data/md.py"
         },
         {
             "name": "RSA",
