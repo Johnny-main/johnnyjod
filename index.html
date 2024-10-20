@@ -6,8 +6,6 @@
     <title>VS Code-like Code Preview</title>
     <style>
         /* General Styling */
-        <style>
-        /* General Styling */
         body {
             font-family: 'Consolas', 'Courier New', monospace;
             margin: 0;
@@ -133,28 +131,32 @@
 </head>
 <body>
 
+<!-- Password Prompt -->
 <div id="password-prompt">
     <div id="password-container">
         <h2>Enter Password</h2>
         <input type="password" id="password-input" placeholder="Enter password">
         <br>
         <button onclick="checkPassword()">Submit</button>
-        <p id="error-message" style="color: red; display: none;">Incorrect password, please try again.</p>
+        <p id="error-message">Incorrect password, please try again.</p>
     </div>
 </div>
 
-<div id="sidebar">
-    <!-- Buttons will be generated dynamically here -->
-</div>
-
-<div id="editor-container">
-    <div id="header">
-        <div id="current-file">Select a program to view</div>
-        <button id="copy-btn" style="display: none;" onclick="copyToClipboard()">Copy Code</button>
+<!-- Main Content -->
+<div id="main-content">
+    <div id="sidebar">
+        <!-- Buttons will be generated dynamically here -->
     </div>
 
-    <div id="code-preview">
-        <!-- Code will be displayed here -->
+    <div id="editor-container">
+        <div id="header">
+            <div id="current-file">Select a program to view</div>
+            <button id="copy-btn" style="display: none;" onclick="copyToClipboard()">Copy Code</button>
+        </div>
+
+        <div id="code-preview">
+            <!-- Code will be displayed here -->
+        </div>
     </div>
 </div>
 
@@ -167,7 +169,7 @@
 
         if (inputPassword === correctPassword) {
             document.getElementById('password-prompt').style.display = 'none';
-            document.body.style.display = 'flex'; // Show the page content
+            document.getElementById('main-content').style.display = 'flex'; // Show main content
         } else {
             errorMessage.style.display = 'block';
         }
