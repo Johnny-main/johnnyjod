@@ -1,0 +1,14 @@
+{
+    "programs": [
+        {
+            "name": "Encrypt Program",
+            "file": "cip.c",
+            "path": "data/cip.c"
+        },
+        {
+            "name": "Another Program",
+            "file": "another_program.c",
+            "path": "data/another_program.c"
+        }
+    ]
+}

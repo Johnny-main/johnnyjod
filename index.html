@@ -1,96 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Code-like Code Preview</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Consolas', 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Sidebar Styling (like VS Code's File Explorer) */
+        #sidebar {
+            background-color: #252526;
+            padding: 20px;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-right: 1px solid #333;
+        }
+        #sidebar button {
+            background-color: #3c3c3c;
+            color: #d4d4d4;
+            padding: 10px;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        #sidebar button:hover {
+            background-color: #555;
+        }
+        /* Code Editor Area */
+        #editor-container {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        #header {
+            background-color: #007acc;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #code-preview {
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            font-size: 14px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            height: 100%;
+            border-top: 1px solid #333;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+        /* Copy Button Styling */
+        #copy-btn {
+            background-color: #0e639c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        #copy-btn:hover {
+            background-color: #1177bb;
+        }
+        /* Scrollbar Customization */
+        #code-preview::-webkit-scrollbar {
+            width: 10px;
+        }
+        #code-preview::-webkit-scrollbar-thumb {
+            background-color: #007acc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <!-- Buttons will be generated dynamically here -->
+</div>
+
+<div id="editor-container">
+    <div id="header">
+        <div id="current-file">Select a program to view</div>
+        <button id="copy-btn" style="display: none;" onclick="copyToClipboard()">Copy Code</button>
+    </div>
+
+    <div id="code-preview">
+        <!-- Code will be displayed here -->
+    </div>
+</div>
+
+<script>
+    async function loadPrograms() {
+        try {
+            const response = await fetch('data/codes.json');
+            const programData = await response.json();
+            
+            const sidebar = document.getElementById('sidebar');
+            programData.programs.forEach((program, index) => {
+                const button = document.createElement('button');
+                button.innerText = program.name;
+                button.onclick = () => showCode(program.path);
+                sidebar.appendChild(button);
+            });
+        } catch (error) {
+            console.error('Error loading programs:', error);
+        }
+    }
+
+    async function showCode(path) {
+        try {
+            const response = await fetch(path);
+            const code = await response.text();
+
+            const codePreview = document.getElementById('code-preview');
+            codePreview.innerText = code;
+
+            const currentFile = document.getElementById('current-file');
+            currentFile.innerText = path.split('/').pop(); // Get the file name
+
+            document.getElementById('copy-btn').style.display = 'block';
+        } catch (error) {
+            console.error('Error loading code:', error);
+        }
+    }
+
+    function copyToClipboard() {
+        const codePreview = document.getElementById('code-preview');
+        const text = codePreview.innerText;
+
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        alert('Code copied to clipboard!');
+    }
+
+    // Load programs dynamically on page load
+    window.onload = loadPrograms;
+</script>
+
+</body>
 </html>
