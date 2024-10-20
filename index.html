@@ -12,11 +12,48 @@
             padding: 0;
             background-color: #1e1e1e;
             color: #d4d4d4;
-            display: flex;
+            display: none; /* Initially hide the body */
             height: 100vh;
             overflow: hidden;
         }
-        /* Sidebar Styling (like VS Code's File Explorer) */
+        /* Password Prompt Styling */
+        #password-prompt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #password-container {
+            background-color: #252526;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #password-container input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+        #password-container button {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        #password-container button:hover {
+            background-color: #005f99;
+        }
+
+        /* Sidebar Styling */
         #sidebar {
             background-color: #252526;
             padding: 20px;
@@ -88,6 +125,16 @@
 </head>
 <body>
 
+<div id="password-prompt">
+    <div id="password-container">
+        <h2>Enter Password</h2>
+        <input type="password" id="password-input" placeholder="Enter password">
+        <br>
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color: red; display: none;">Incorrect password, please try again.</p>
+    </div>
+</div>
+
 <div id="sidebar">
     <!-- Buttons will be generated dynamically here -->
 </div>
@@ -104,6 +151,20 @@
 </div>
 
 <script>
+    const correctPassword = 'yourpassword'; // Set your password here
+
+    function checkPassword() {
+        const inputPassword = document.getElementById('password-input').value;
+        const errorMessage = document.getElementById('error-message');
+
+        if (inputPassword === correctPassword) {
+            document.getElementById('password-prompt').style.display = 'none';
+            document.body.style.display = 'flex'; // Show the page content
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    }
+
     async function loadPrograms() {
         try {
             const response = await fetch('data/codes.json');
