@@ -6,6 +6,11 @@
             "path": "data/cip.c"
         },
         {
+            "name": "Product Cipher",
+            "file": "prod.py",
+            "path": "data/prod.py"
+        },
+        {
             "name": "Another Program",
             "file": "another_program.c",
             "path": "data/another_program.c"
