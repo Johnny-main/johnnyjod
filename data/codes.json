@@ -13,7 +13,7 @@
         {
             "name": "md5",
             "file": "md5.py",
-            "path": "data/md5.py"
+            "path": "data/rsa.py"
         },
         {
             "name": "RSA",
