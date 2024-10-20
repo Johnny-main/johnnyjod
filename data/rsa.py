@@ -1,63 +1,89 @@
-def gcd(a, b):
-    """Calculate the greatest common divisor using the Euclidean algorithm."""
-    while b != 0:
-        a, b = b, a % b
-    return a
+import random
 
-def mod_exp(base, exp, mod):
-    """Perform modular exponentiation."""
-    result = 1
-    base = base % mod
-    while exp > 0:
-        if exp % 2 == 1:  # If exp is odd, multiply the base with result
-            result = (result * base) % mod
-        exp //= 2  # Divide exp by 2
-        base = (base * base) % mod  # Square the base
-    return result
+def is_probably_prime(candidate, iterations=5):
+    if candidate < 2:
+        return False
+    for small_prime in [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]:
+        if candidate % small_prime == 0:
+            return candidate == small_prime
+    exponent, remainder = 0, candidate - 1
+    while remainder % 2 == 0:
+        exponent, remainder = exponent + 1, remainder // 2  # Use // for integer division
+    for _ in range(iterations):
+        base = pow(random.randint(2, candidate - 1), remainder, candidate)
+        if base in (1, candidate - 1):
+            continue
+        for _ in range(exponent - 1):
+            base = pow(base, 2, candidate)
+            if base == candidate - 1:
+                break
+        else:
+            return False
+    return True
 
-def mod_inverse(e, phi):
-    """Calculate the modular inverse using the Extended Euclidean Algorithm."""
-    t1, t2 = 0, 1
-    r1, r2 = phi, e
-    while r2 != 0:
-        q = r1 // r2
-        r1, r2 = r2, r1 - q * r2
-        t1, t2 = t2, t1 - q * t2
-    if r1 == 1:
-        return t1 % phi
-    return -1  # Modular inverse does not exist
+def find_large_prime(bit_length):
+    while True:
+        prime_candidate = random.getrandbits(bit_length)
+        if is_probably_prime(prime_candidate):
+            return prime_candidate
 
-def main():
-    # Input the plaintext and primes
-    pt = int(input("Enter the secret message (plaintext) to encrypt: "))
-    p = int(input("Enter a prime number P: "))
-    q = int(input("Enter a prime number Q: "))
+def modular_inverse(a, m):
+    def extended_gcd(x, y):
+        if x == 0:
+            return (y, 0, 1)
+        else:
+            gcd, y1, x1 = extended_gcd(y % x, x)
+            return (gcd, x1 - (y // x) * y1, y1)  # Use // for integer division
+    gcd, x, _ = extended_gcd(a, m)
+    if gcd != 1:
+        raise Exception('Inverse does not exist')
+    return x % m
 
-    # Calculate n and phi
-    n = p * q
-    phi = (p - 1) * (q - 1)
+def create_key_pair(bits):
+    prime1 = find_large_prime(bits // 2)
+    prime2 = find_large_prime(bits // 2)
+    modulus = prime1 * prime2
+    phi_n = (prime1 - 1) * (prime2 - 1)
+    public_exponent = 65537  # Standard value for e
+    private_exponent = modular_inverse(public_exponent, phi_n)
+    return ((public_exponent, modulus), (private_exponent, modulus))
 
-    # Choose e
-    e = next(i for i in range(2, phi) if gcd(i, phi) == 1)
+def encrypt_data(plain_data, pub_key):
+    exp, mod = pub_key
+    return pow(plain_data, exp, mod)
 
-    # Calculate d
-    d = mod_inverse(e, phi)
-    if d == -1:
-        print("No modular inverse found for the given e.")
-        return
+def decrypt_data(cipher_data, priv_key):
+    exp, mod = priv_key
+    return pow(cipher_data, exp, mod)
 
-    # Encrypt the plaintext
-    ct = mod_exp(pt, e, n)
+def generate_signature(plain_data, priv_key):
+    exp, mod = priv_key
+    return pow(plain_data, exp, mod)
 
-    # Output the keys and ciphertext
-    print(f"\nPublic Key (n, e) = ({n}, {e})")
-    print(f"Private Key (d) = {d}")
-    print(f"Ciphertext (CT): {ct}")
-
-    # Decrypt the ciphertext
-    pt2 = mod_exp(ct, d, n)
-    print("\nDecrypting...")
-    print(f"Decrypted Plaintext (PT): {pt2}")
+def verify_signature(original_data, sig, pub_key):
+    exp, mod = pub_key
+    return pow(sig, exp, mod) == original_data
 
 if __name__ == "__main__":
-    main()
+    public_key, private_key = create_key_pair(1024)
+    print(f"Generated Public Key: {public_key}")
+    print(f"Generated Private Key: {private_key}")
+
+    message = 32154
+    print(f"\nOriginal Message: {message}")
+
+    encrypted_message = encrypt_data(message, public_key)
+    print(f"Encrypted Message: {encrypted_message}")
+
+    decrypted_message = decrypt_data(encrypted_message, private_key)
+    print(f"Decrypted Message: {decrypted_message}")
+
+    signature = generate_signature(message, private_key)
+    print(f"\nSignature: {signature}")
+
+    is_signature_valid = verify_signature(message, signature, public_key)
+    print(f"Is Signature Valid: {is_signature_valid}")
+
+    tampered_message = 87609
+    is_signature_valid = verify_signature(tampered_message, signature, public_key)
+    print(f"Is Tampered Message Signature Valid: {is_signature_valid}")

@@ -6,6 +6,11 @@
             "path": "data/cip.c"
         },
         {
+            "name": "Encrypt Program",
+            "file": "cip.java",
+            "path": "data/cip.java"
+        },
+        {
             "name": "PlayFair.java",
             "file": "pf.java",
             "path": "data/pf.java"
