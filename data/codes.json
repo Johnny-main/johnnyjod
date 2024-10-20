@@ -1,28 +1,28 @@
 {
     "programs": [
         {
-            "name": "Encrypt Program",
-            "file": "cip.c",
-            "path": "data/cip.c"
+            "name": "cc c",
+            "file": "cc.c",
+            "path": "data/cc.c"
         },
         {
-            "name": "Encrypt Program",
-            "file": "cip.java",
-            "path": "data/cip.java"
+            "name": "cc java",
+            "file": "cc.java",
+            "path": "data/cc.java"
         },
         {
-            "name": "PlayFair.java",
+            "name": "pf java",
             "file": "pf.java",
             "path": "data/pf.java"
         },
         
         {
-            "name": "PlayFair.c",
+            "name": "pf c",
             "file": "pf.c",
             "path": "data/pf.c"
         },
         {
-            "name": "Product Cipher",
+            "name": "pc",
             "file": "prod.py",
             "path": "data/prod.py"
         },
@@ -32,7 +32,7 @@
             "path": "data/md5.py"
         },
         {
-            "name": "RSA",
+            "name": "rsa",
             "file": "rsa.py",
             "path": "data/rsa.py"
         }

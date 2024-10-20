@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class cip {
+public class cc {
 
     // Method to encrypt the message
     public static String encrypt(String text, int shift) {
