@@ -6,6 +6,17 @@
             "path": "data/cip.c"
         },
         {
+            "name": "PlayFair.java",
+            "file": "pf.java",
+            "path": "data/pf.java"
+        },
+        
+        {
+            "name": "PlayFair.c",
+            "file": "pf.c",
+            "path": "data/pf.c"
+        },
+        {
             "name": "Product Cipher",
             "file": "prod.py",
             "path": "data/prod.py"
