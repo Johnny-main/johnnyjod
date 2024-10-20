@@ -23,8 +23,8 @@
         },
         {
             "name": "pc",
-            "file": "prod.py",
-            "path": "data/prod.py"
+            "file": "pc.py",
+            "path": "data/pc.py"
         },
         {
             "name": "md5",
