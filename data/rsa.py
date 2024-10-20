@@ -65,7 +65,7 @@ def verify_signature(original_data, sig, pub_key):
     return pow(sig, exp, mod) == original_data
 
 if __name__ == "__main__":
-    public_key, private_key = create_key_pair(1024)
+    public_key, private_key = create_key_pair(64)
     print(f"Generated Public Key: {public_key}")
     print(f"Generated Private Key: {private_key}")
 
