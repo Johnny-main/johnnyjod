@@ -66,4 +66,32 @@ pipeline {
     }
 }
 
+exp docker
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, Docker World!");
+    }
+}
+javac HelloWorld.java
 
+
+Dockerfile
+
+
+FROM openjdk:11-jdk-slim
+
+# Set the working directory in the Docker container
+WORKDIR /app
+
+# Copy the HelloWorld.java file into the Docker container
+COPY HelloWorld.java .
+
+# Compile the HelloWorld.java file
+RUN javac HelloWorld.java
+
+# Specify the command to run when the Docker container starts
+CMD ["java", "HelloWorld"]
+
+docker build -t hello-world-java
+
+docker run hello-world-java
