@@ -1,7 +1,7 @@
 {
     "programs": [
         {
-            "name": "1",
+            "name": "1. Resume",
             "file": "Resume",
             "path": "data/ip/1.txt"
         },
