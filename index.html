@@ -115,7 +115,7 @@
             programData.programs.forEach((program, index) => {
                 const button = document.createElement('button');
                 button.innerText = program.name;
-                button.onclick = () => showCode(program.path);
+                button.onclick = () => showCode(program.path, program.file);
                 sidebar.appendChild(button);
             });
         } catch (error) {
@@ -123,7 +123,7 @@
         }
     }
 
-    async function showCode(path) {
+    async function showCode(path,file) {
         try {
             const response = await fetch(path);
             const code = await response.text();
