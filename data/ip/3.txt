@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; }
+        .hero { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); text-align: center; }
+        .property { padding: 1rem; }
+        .example { color: #2c3e50; margin-top: 0.5rem; font-size: 1.1rem; }
+        .code { color: #e74c3c; padding: 0 4px; }
+    </style>
+</head>
+<body>
+    <h1 class="hero">Font & Text Properties</h1>
+    <div class="content">
+        <div class="property">
+            <p>Font Family: <span class="code">font-family: 'Segoe UI', Arial, sans-serif;</span>
+            <br>This text uses a system font stack for optimal readability.</p>
+        </div>
+        <div class="property">
+            <p>Font Size & Weight: <span class="code">font-size: 1.1rem; font-weight: bold;</span>
+            <br><span class="example" style="font-weight: bold;">This text demonstrates size and weight variations.</span></p>
+        </div>
+        <div class="property">
+            <p>Letter Spacing: <span class="code">letter-spacing: 2px;</span>
+            <br><span class="example" style="letter-spacing: 2px;">This text has increased letter spacing.</span></p>
+        </div>
+        <div class="property">
+            <p>Text Transform: <span class="code">text-transform: uppercase;</span>
+            <br><span class="example" style="text-transform: uppercase;">This text is transformed to uppercase.</span></p>
+        </div>
+        <div class="property">
+            <p>Text Decoration: <span class="code">text-decoration: underline wavy #3498db;</span>
+            <br><span class="example" style="text-decoration: underline wavy;">This text has a wavy underline.</span></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .section {height: 50vh; text-align: center;font-size: 2rem; font-weight: bold;color: white;}
+        .gradient { background: linear-gradient(45deg, #2193b0, #ff0000); }
+        .pattern { background-color: #2c3e50; background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-old-classic-car-art-in-the-woods-17-jpg-files-in-image_2671047.jpg"); background-repeat: repeat; background-position: center; background-blend-mode: soft-light; }
+        .parallax { background: url("https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-old-classic-car-art-in-the-woods-17-jpg-files-in-image_2671047.jpg") fixed; background-size: cover; background-position: center; }
+        .radial { background: radial-gradient(circle, #11998e, #e90303); }
+    </style>
+</head>
+<body>
+    <div class="section gradient">
+        <div> background: linear-gradient(45deg, #2193b0, #6dd5ed); </div>
+    </div>
+    <div class="section pattern">
+        <div> background-repeat: repeat; </div>
+    </div>
+    <div class="section parallax">
+        <div> background-attachment: fixed; </div>
+    </div>
+    <div class="section radial">
+        <div> background: radial-gradient(circle, #11998e, #38ef7d); </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+
+export default function RegistrationForm() {
+    const [formData, setFormData] = useState({ username: '', email: '', password: '', confirm: '' });
+    const [errors, setErrors] = useState({});
+
+    const validate = () => {
+        const newErrors = {};
+        if (!formData.username.match(/^[A-Za-z0-9]{3,16}$/)) {
+            newErrors.username = 'Username must be 3-16 characters and alphanumeric';
+        }
+        if (!formData.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            newErrors.email = 'Please enter a valid email';
+        }
+        if (!formData.password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/)) {
+            newErrors.password = 'Password must be 8+ chars with number, upper & lowercase';
+        }
+        if (formData.password !== formData.confirm) {
+            newErrors.confirm = 'Passwords do not match';
+        }
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = (e) => { e.preventDefault(); if (validate()) { alert('Registration successful!'); } };
+
+    const handleChange = (e) => { const { name, value } = e.target; setFormData(prev => ({ ...prev, [name]: value })); };
+
+    return (
+        <div >
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+                <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} />
+                {errors.username && (<div> {errors.username} </div>)}
+            </div>
+
+            <div>
+                <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+                {errors.email && (<div> {errors.email} </div>)}
+            </div>
+
+            <div>
+                <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+                {errors.password && (<div> {errors.password} </div>)}
+            </div>
+
+            <div>
+                <input type="password" name="confirm" placeholder="Confirm Password" value={formData.confirm} onChange={handleChange} />
+                {errors.confirm && (<div> {errors.confirm} </div>)}
+            </div>
+
+            <button type="submit" > Register </button>
+        </form>
+    </div>
+    );}

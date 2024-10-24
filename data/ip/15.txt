@@ -1,0 +1,48 @@
+import React, { Component, useEffect } from 'react';
+
+
+const Display = ({ count, inputRef }) => {
+  useEffect(() => {
+    if (count === 0) inputRef.current?.focus();
+  }, [count, inputRef]);
+  
+  return <div>Count: {count}</div>;
+};
+
+
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+    this.inputRef = React.createRef();
+    this.intervalRef = React.createRef();
+  }
+  componentDidMount() {
+    this.inputRef.current?.focus();
+  }
+  componentWillUnmount() {
+    clearInterval(this.intervalRef.current);
+  }
+  startCount = () => {
+    this.intervalRef.current = setInterval(() => 
+      this.setState(prev => ({ count: prev.count + 1 })), 1000);
+  };
+  resetCount = () => {
+    clearInterval(this.intervalRef.current);
+    this.setState({ count: 0 });
+  };
+  render() {
+    return (
+      <div >
+        <input ref={this.inputRef} />
+        <Display count={this.state.count} inputRef={this.inputRef} />
+        <div className="space-x-2">
+          <button onClick={this.startCount} >Start</button>
+          <button onClick={this.resetCount} >Reset</button>
+        </div>
+      </div>
+    );
+  }
+}
+export default Counter;

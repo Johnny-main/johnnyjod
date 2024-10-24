@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        form {  border-radius: 10px;  width: 30vw; margin: 150px auto; display: flex; flex-direction: column;  align-items: center; box-sizing: border-box; }
+        input {  width: 80%; margin: 2vh 0; padding: 0.8rem;  border: 2px solid #e1e1e1;  }
+        button {  width: 80%;  padding: 0.8rem; border: none;  border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); alert('Registration successful!')">
+        <h2 style="text-align: center;">Create Account</h2>
+        <input type="text" placeholder="Full Name" required pattern="[A-Za-z ]{2,50}">
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required minlength="8" 
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>
