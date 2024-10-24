@@ -2,52 +2,52 @@
     "programs": [
         {
             "name": "1",
-            "file": "1.txt",
+            "file": "Resume",
             "path": "data/ip/1.txt"
         },
         {
             "name": "2",
-            "file": "2.txt",
+            "file": "Registration",
             "path": "data/ip/2.txt"
         },
         {
             "name": "3",
-            "file": "3.txt",
+            "file": "CSS Font & Text",
             "path": "data/ip/3.txt"
         },
         {
             "name": "4",
-            "file": "4.txt",
+            "file": "Background",
             "path": "data/ip/4.txt"
         },
         {
             "name": "5",
-            "file": "5.txt",
+            "file": "Volume cylinder",
             "path": "data/ip/5.txt"
         },
         {
             "name": "6",
-            "file": "6.txt",
+            "file": "JS Set bg font",
             "path": "data/ip/6.txt"
         },
         {
             "name": "7",
-            "file": "7.txt",
+            "file": "Simple interest",
             "path": "data/ip/7.txt"
         },
         {
             "name": "8",
-            "file": "8.txt",
+            "file": "Class Constructor Person",
             "path": "data/ip/8.txt"
         },
         {
             "name": "9",
-            "file": "9.txt",
+            "file": "Promise",
             "path": "data/ip/9.txt"
         },
         {
             "name": "10",
-            "file": "10.txt",
+            "file": "Callback",
             "path": "data/ip/10.txt"
         },
         {
