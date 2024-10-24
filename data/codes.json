@@ -1,40 +1,109 @@
 {
     "programs": [
         {
-            "name": "cc c",
-            "file": "cc.c",
-            "path": "data/cc.c"
+            "name": "1",
+            "file": "1.txt",
+            "path": "data/ip/1.txt"
         },
         {
-            "name": "cc java",
-            "file": "cc.java",
-            "path": "data/cc.java"
+            "name": "2",
+            "file": "2.txt",
+            "path": "data/ip/2.txt"
         },
         {
-            "name": "pf java",
-            "file": "pf.java",
-            "path": "data/pf.java"
-        },
-        
-        {
-            "name": "pf c",
-            "file": "pf.c",
-            "path": "data/pf.c"
+            "name": "3",
+            "file": "3.txt",
+            "path": "data/ip/3.txt"
         },
         {
-            "name": "pc",
-            "file": "pc.py",
-            "path": "data/pc.py"
+            "name": "4",
+            "file": "4.txt",
+            "path": "data/ip/4.txt"
         },
         {
-            "name": "md5",
-            "file": "md5.py",
-            "path": "data/md5.py"
+            "name": "5",
+            "file": "5.txt",
+            "path": "data/ip/5.txt"
         },
         {
-            "name": "rsa",
-            "file": "rsa.py",
-            "path": "data/rsa.py"
+            "name": "6",
+            "file": "6.txt",
+            "path": "data/ip/6.txt"
+        },
+        {
+            "name": "7",
+            "file": "7.txt",
+            "path": "data/ip/7.txt"
+        },
+        {
+            "name": "8",
+            "file": "8.txt",
+            "path": "data/ip/8.txt"
+        },
+        {
+            "name": "9",
+            "file": "9.txt",
+            "path": "data/ip/9.txt"
+        },
+        {
+            "name": "10",
+            "file": "10.txt",
+            "path": "data/ip/10.txt"
+        },
+        {
+            "name": "11",
+            "file": "11.txt",
+            "path": "data/ip/11.txt"
+        },
+        {
+            "name": "12",
+            "file": "12.txt",
+            "path": "data/ip/12.txt"
+        },
+        {
+            "name": "13",
+            "file": "13.txt",
+            "path": "data/ip/13.txt"
+        },
+        {
+            "name": "14",
+            "file": "14.txt",
+            "path": "data/ip/14.txt"
+        },
+        {
+            "name": "15",
+            "file": "15.txt",
+            "path": "data/ip/15.txt"
+        },
+        {
+            "name": "16",
+            "file": "16.txt",
+            "path": "data/ip/16.txt"
+        },
+        {
+            "name": "17",
+            "file": "17.txt",
+            "path": "data/ip/17.txt"
+        },
+        {
+            "name": "18",
+            "file": "18.txt",
+            "path": "data/ip/18.txt"
+        },
+        {
+            "name": "19",
+            "file": "19.txt",
+            "path": "data/ip/19.txt"
+        },
+        {
+            "name": "20",
+            "file": "20.txt",
+            "path": "data/ip/20.txt"
+        },
+        {
+            "name": "21",
+            "file": "21.txt",
+            "path": "data/ip/21.txt"
         }
     ]
 }
