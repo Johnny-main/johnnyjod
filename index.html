@@ -132,7 +132,7 @@
             codePreview.innerText = code;
 
             const currentFile = document.getElementById('current-file');
-            currentFile.innerText = path.split('/').pop(); // Get the file name
+            currentFile.innerText = file; // Get the file name
 
             document.getElementById('copy-btn').style.display = 'block';
         } catch (error) {
