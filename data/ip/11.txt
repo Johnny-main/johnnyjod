@@ -1,0 +1,13 @@
+npx create-react-app my-app
+
+cd my-app
+
+import './App.css'
+
+export default function App() {
+  return (
+    <div>
+      HELLO WORLD!
+    </div>
+  )
+}

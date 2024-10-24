@@ -1,0 +1,13 @@
+function asyncTask(callback) {
+  setTimeout(() => {
+      console.log("Asynchronous task completed!");
+      callback();
+  }, 2000); // Waits for 2 seconds
+}
+
+// Start the asynchronous task
+console.log("Starting the async task...");
+asyncTask(() => {
+  console.log("Callback executed after the async task.");
+});
+console.log("This will log before the async task completes.");

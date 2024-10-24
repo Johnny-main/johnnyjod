@@ -1,0 +1,22 @@
+<html>
+<head>
+    <script>
+        function fetchData(callback) {
+            setTimeout(() => {
+                const data = "Data fetched successfully!";
+                callback(data); // Call the callback function with the data
+            }, 1000); // Simulate a 1-second delay
+        }
+        function handleFetch() {
+            fetchData((result) => {
+                document.getElementById("result").innerText = result;
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Simple Callback Example</h1>
+    <button onclick="handleFetch()">Fetch Data</button>
+    <h2 id="result"></h2>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Cylinder Volume</title>
+    <script>
+        function calculateVolume() {
+          const pi = 3.14;
+            const r = parseFloat(document.getElementById("radius").value);
+            const h = parseFloat(document.getElementById("height").value);
+            document.getElementById("result").innerText = `Volume: ${(pi * r * r * h).toFixed(2)} cubic units`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cylinder Volume Calculator</h1>
+    <input type="number" id="radius" placeholder="Radius" step="0.01">
+    <input type="number" id="height" placeholder="Height" step="0.01">
+    <button onclick="calculateVolume()">Calculate</button>
+    <h2 id="result"></h2>
+</body>
+</html>

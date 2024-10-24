@@ -1,0 +1,14 @@
+const fs = require("fs");
+const content = `This is a sample paragraph.`;
+fs.writeFile("abc.txt", content, (err) => {
+  if (err) {
+    return console.error("Error writing to file:", err);
+  }
+  console.log(`File created and written successfully.`);
+});
+fs.readFile("abc.txt", (err,data) => {
+  if (err) {
+    return console.error("Error reading to file:", err);
+  }
+  console.log(data.toString());
+});

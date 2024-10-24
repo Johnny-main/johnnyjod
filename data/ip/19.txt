@@ -1,0 +1,30 @@
+// Create a buffer from a string
+const buffer = Buffer.from('Hello, Buffer!');
+
+// Display the original buffer
+console.log('Original Buffer:', buffer);
+
+// Convert buffer to string
+const str = buffer.toString();
+console.log('\nString from Buffer:', str);
+
+// Create a buffer with a specific size
+const bufferSize = 20;
+const emptyBuffer = Buffer.alloc(bufferSize);
+console.log('\nEmpty Buffer:', emptyBuffer);
+
+// Write to the empty buffer
+emptyBuffer.write('Hi!');
+console.log('\nBuffer after writing "Hi!":\n', emptyBuffer);
+
+// Slice the buffer
+const slicedBuffer = buffer.slice(0, 5); // Get first 5 bytes
+console.log('\nSliced Buffer:', slicedBuffer.toString());
+
+// Concatenate buffers
+const buffer1 = Buffer.from('Hello');
+const buffer2 = Buffer.from(' World!');
+const concatenatedBuffer = Buffer.concat([buffer1, buffer2]);
+console.log('\nConcatenated Buffer:', concatenatedBuffer.toString());
+
+console.log('\nLength of Original Buffer:', buffer.length);

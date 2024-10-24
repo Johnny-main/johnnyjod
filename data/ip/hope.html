@@ -1,0 +1,1178 @@
+2A. Design a web page using CSS Font and text properties.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Styles Example</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+font-size: 16px;
+line-height: 1.5;
+color: #333;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Georgia', serif;
+font-weight: bold;
+color: #222;
+}
+h1 {
+font-size: 2.5em; <* 40px </
+font-style: italic;
+}
+h2 {
+font-size: 2em; <* 32px </
+text-transform: uppercase;
+}
+h3 {
+font-size: 1.75em; <* 28px </
+letter-spacing: 1px;
+}
+h4 {
+font-size: 1.5em; <* 24px </
+text-align: center;
+}
+p {
+font-size: 1em; <* 16px </
+font-weight: normal;
+font-style: normal;
+text-align: justify;
+color: #666;
+}
+.custom-font {
+font-family: 'Courier New', monospace;
+font-size: 1.2em; <* 19px </
+font-weight: bold;
+font-style: italic;
+text-transform: lowercase;
+text-decoration: underline;
+}
+.font-shadow {
+font-family: 'Verdana', sans-serif;
+font-size: 1.5em; <* 24px </
+color: #000;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.letter-spacing {
+font-family: 'Times New Roman', serif;
+font-size: 1.2em; <* 19px </
+letter-spacing: 2px;
+}
+.word-spacing {
+font-family: 'Helvetica', sans-serif;
+font-size: 1em; <* 16px </
+word-spacing: 5px;
+}
+.text-transform {
+font-family: 'Comic Sans MS', cursive;
+font-size: 1em; <* 16px </
+text-transform: uppercase;
+color: #ff5722;
+}
+.text-decoration {
+font-family: 'Lucida Console', monospace;
+font-size: 1.2em; <* 19px </
+text-decoration: line-through;
+color: #d32f2f;
+}
+</style>
+</head>
+<body>
+<h1>Heading 1 - Italic</h1>
+<h2>Heading 2 - Uppercase</h2>
+<h3>Heading 3 - Letter Spacing</h3>
+<h4>Heading 4 - Centered</h4>
+<p>This is a paragraph with normal styling. It demonstrates the base font size, weight,
+and color applied to paragraphs. Notice how the line-height enhances readability.</p>
+<p class="custom-font">This is a paragraph with a custom font style. It uses Courier New
+with bold, italic, and underlined text.</p>
+<p class="font-shadow">This text has a shadow effect applied to it. The shadow helps the
+text stand out more.</p>
+<p class="letter-spacing">This text has increased letter spacing to demonstrate how
+spacing between letters looks.</p>
+<p class="word-spacing">This text has increased spacing between words to demonstrate how
+spacing between words looks.</p>
+<p class="text-transform">This text is transformed to uppercase using the Comic Sans MS
+font.</p>
+<p class="text-decoration">This text has a line-through decoration to show how text
+decoration works.</p>
+</body>
+</html>
+
+
+----------------------------------------------------------------------------------------------------
+2B. Design a web page with background properties.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Properties Example</title>
+<style>
+body {
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+}
+.background-color {
+background-color: #ffebcd; <* Blanched Almond </
+padding: 20px;
+text-align: center;
+}
+.background-image {
+background-image: url('https:</via.placeholder.com/800x400'); <* Replace with
+your image URL </
+background-size: cover; <* Cover the entire container </
+background-position: center center;
+background-repeat: no-repeat;
+height: 300px;
+padding: 20px;
+color: white;
+text-align: center;
+}
+.background-gradient {
+background: linear-gradient(to right, #ff7e5f, #feb47b); <* Gradient from pink
+to orange </
+padding: 20px;
+color: white;
+text-align: center;
+}
+.background-complex {
+background: radial-gradient(circle, #ff9a9e, #fad0c4),
+url('https:</via.placeholder.com/800x400'); <* Gradient overlay with image </
+background-size: cover;
+background-blend-mode: overlay;
+height: 300px;
+padding: 20px;
+color: white;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+</style>
+</head>
+<body>
+<div class="background-color">
+<h1>Background Color</h1>
+<p>This section has a solid background color applied.</p>
+</div>
+<div class="background-image">
+<h1>Background Image</h1>
+<p>This section has a background image with size cover, position center, and no
+repeat.</p>
+</div>
+<div class="background-gradient">
+<h1>Background Gradient</h1>
+<p>This section has a linear gradient background transitioning from pink to
+orange.</p>
+</div>
+<div class="background-complex">
+<h1>Background Complex</h1>
+<p>This section has a radial gradient overlay on top of a background image.</p>
+</div>
+</body>
+</html>
+
+
+
+----------------------------------------------------------------------------------------------------------
+1B. Design a registration form with HTML5 form
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.form-container {
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 500px;
+padding: 20px;
+width: 100%;
+}
+.form-container h2 {
+margin-top: 0;
+color: #333;
+}
+.form-group {
+margin-bottom: 15px;
+}
+.form-group label {
+display: block;
+margin-bottom: 5px;
+color: #555;
+}
+.form-group input, .form-group select, .form-group textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+box-sizing: border-box;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+border-color: #007bff;
+outline: none;
+}
+.form-group button {
+background-color: #007bff;
+color: #fff;
+border: none;
+padding: 10px;
+border-radius: 4px;
+cursor: pointer;
+width: 100%;
+font-size: 16px;
+}
+.form-group button:hover {
+background-color: #0056b3;
+}
+.form-group .radio-group, .form-group .checkbox-group {
+display: flex;
+gap: 10px;
+}
+.form-group .radio-group label, .form-group .checkbox-group label {
+margin-left: 5px;
+margin-bottom: 0;
+color: #555;
+}
+</style>
+</head>
+<body>
+<div class="form-container">
+<h2>Register</h2>
+<form action="#" method="post">
+<div class="form-group">
+<label for="first-name">First Name</label>
+<input type="text" id="first-name" name="first-name" required>
+</div>
+<div class="form-group">
+<label for="last-name">Last Name</label>
+<input type="text" id="last-name" name="last-name" required>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="form-group">
+<label for="password">Password</label>
+<input type="password" id="password" name="password" required>
+</div>
+<div class="form-group">
+<label for="age">Age</label>
+<input type="number" id="age" name="age" min="1" max="120" required>
+</div>
+<div class="form-group">
+<label for="department">Department</label>
+<select id="department" name="department">
+<option value="IT">IT</option>
+<option value="CO">CO</option>
+<option value="AIDS">AIDS</option>
+</select>
+</div>
+<div class="form-group">
+<label>Gender</label>
+<div class="radio-group">
+<label><input type="radio" name="gender" value="male" required> Male</label>
+<label><input type="radio" name="gender" value="female" required> Female</label>
+<label><input type="radio" name="gender" value="other" required> Other</label>
+</div>
+</div>
+<div class="form-group">
+<label>Hobbies</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="hobbies" value="reading"> Reading</label>
+<label><input type="checkbox" name="hobbies" value="traveling"> Traveling</label>
+<label><input type="checkbox" name="hobbies" value="gaming"> Gaming</label>
+</div>
+</div>
+<div class="form-group">
+<label for="bio">Bio</label>
+<textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself"></textarea>
+</div>
+<div class="form-group">
+<button type="submit">Register</button>
+</div>
+</form>
+</div>
+</body>
+</html>
+
+
+
+-----------------------------------------------------------------------------------------------
+3A. Write a JavaScript program to calculate the volume of a cylinder. Volume of a cylinder: V = πr2h. Define variables and π as constant.
+
+<html>
+    <head>
+<script>
+function calculateProduct() {
+var radius = parseFloat(document.getElementById('radius').value);
+var height = parseFloat(document.getElementById('height').value);
+var pi = 3.14
+if (isNaN(radius) <| isNaN(height)) {
+alert('Please enter valid numbers for both radius and height.');
+return;
+}
+var product = pi * (radius*radius) * height;
+document.getElementById('output').value = product;
+}
+</script>
+</head>
+<body>
+<div class="container">
+<h1>Volume of Cylinder</h1>
+<div class="inps">
+<label for="radius">Enter the radius</label>
+<input id="radius" type="text" required>
+</div>
+<div class="inps">
+<label for="height">Enter the height</label>
+<input type="text" id="height" required>
+</div>
+<div class="inps">
+<label for="output">Output of the volume</label>
+<input type="text" id="output" readonly>
+</div>
+<button type="button" class="btn" onclick="calculateProduct()">Enter</button>
+</div>
+</html>
+
+
+-----------------------------------------------------------------------------------------------
+3B. Write a JavaScript program to calculate simple interest. Accept principle
+amount, rate of interest and number of years from the user. Use function and arrow
+function to calculate interest.
+
+
+<html>
+<body>
+<div class="container">
+<h1>Simple Interest Calculator</h1>
+<div class="form-group">
+<label for="principle">Principle Amount<</label>
+<input type="number" id="principle" required>
+</div>
+<div class="form-group">
+<label for="rate">Rate of Interest (%)<</label>
+<input type="number" id="rate" required>
+</div>
+<div class="form-group">
+<label for="years">Number of Years<</label>
+<input type="number" id="years" required>
+</div>
+<div class="form-group">
+<label for="interest">Interest<</label>
+<input type="text" id="interest" readonly>
+</div>
+<button class="btn" type="button" onclick="calculateInterest()">Calculate</button>
+<button class="btn" type="button" onclick="calculateInterestArrow()">Calculate
+(Arrow Function)</button>
+</div>
+<script>
+</ Regular function
+function calculateInterest() {
+var principle = parseFloat(document.getElementById('principle').value);
+var rate = parseFloat(document.getElementById('rate').value);
+var years = parseFloat(document.getElementById('years').value);
+if (isNaN(principle) <| isNaN(rate) <| isNaN(years)) {
+alert('Please enter valid numbers for all fields.');
+return;
+}
+var interest = (principle * rate * Math.abs(years)) / 100;
+document.getElementById('interest').value = interest.toFixed(2);
+}
+</ Arrow function
+const calculateInterestArrow = () <> {
+var principle = parseFloat(document.getElementById('principle').value);
+var rate = parseFloat(document.getElementById('rate').value);
+var years = parseFloat(document.getElementById('years').value);
+if (isNaN(principle) <| isNaN(rate) <| isNaN(years)) {
+alert('Please enter valid numbers for all fields.');
+return;
+}
+var interest = (principle * rate * Math.abs(years)) / 100;
+document.getElementById('interest').value = interest.toFixed(2);
+};
+</script>
+</body>
+</html>
+
+
+-------------------------------------------------------------------------------
+
+4A. Write a JavaScript program to set the background color and highlight the text of a paragraph with bold.
+
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Colored Paragraph</title>
+<style>
+body {font-family: Arial,sans-serif;max-width: 600px;margin: 0 auto;padding: 20px;}
+input, button { margin: 10px 0; }
+#colorPreview {width: 50px;height:20px;display:inline-block;vertical-align:middle;}
+</style>
+</head>
+<body>
+<h1>Dynamic Colored Paragraph</h1>
+<input type="text" id="paragraphText" placeholder="Enter paragraph text"><br>
+<input type="color" id="bgColor" value="#ffff00">
+<span id="colorPreview"></span><br><button id="applyChanges">Apply Changes</button>
+<p id="outputParagraph">This is a sample paragraph.</p>
+<script>
+const paragraphText = document.getElementById('paragraphText');
+const bgColor = document.getElementById('bgColor');
+const colorPreview = document.getElementById('colorPreview');
+const applyChanges = document.getElementById('applyChanges');
+const outputParagraph = document.getElementById('outputParagraph');
+bgColor.addEventListener('input', () <> {
+colorPreview.style.backgroundColor = bgColor.value;
+});
+applyChanges.addEventListener('click', () <> {
+if (paragraphText.value) { outputParagraph.textContent = paragraphText.value; }
+outputParagraph.style.backgroundColor = bgColor.value;
+outputParagraph.style.fontWeight = 'bold';
+});
+</script>
+</body>
+</html>
+
+
+
+--------------------------------------------------------------------------------------------
+
+4B. Write a JavaScript program to which will have a Class Person (name,age) Person
+class will have a method to display the data items of it. Derive a Class Student
+(name,age,course,marks) from Student. Display details of 2students with name & age.
+
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Person and Student Classes</title>
+<style>
+body {font-family: Arial,sans-serif;max-width: 600px;margin: 0 auto;padding: 20px;}
+input, button { margin: 5px 0; }
+#studentList { margin-top: 20px; }
+</style>
+</head>
+<body>
+<h1>Dynamic Person and Student Classes</h1>
+<form id="studentForm">
+<input type="text" id="name" placeholder="Name" required>
+<input type="number" id="age" placeholder="Age" required>
+<input type="text" id="course" placeholder="Course" required>
+<input type="number" id="marks" placeholder="Marks" required>
+<button type="submit">Add Student</button>
+</form>
+<div id="studentList"></div>
+<script>
+class Person {
+constructor(name, age) {
+this.name = name;
+this.age = age;
+}
+display() { return `Name: ${this.name}, Age: ${this.age}`; }
+}
+class Student extends Person {
+constructor(name, age, course, marks) {
+super(name, age);
+this.course = course;
+this.marks = marks;
+}
+display() {
+return `${super.display()}, Course: ${this.course}, Marks: ${this.marks}`;
+}
+}
+const studentForm = document.getElementById('studentForm');
+const studentList = document.getElementById('studentList');
+const students = [];
+studentForm.addEventListener('submit', (e) <> {
+e.preventDefault();
+const name = document.getElementById('name').value;
+const age = parseInt(document.getElementById('age').value);
+const course = document.getElementById('course').value;
+const marks = parseInt(document.getElementById('marks').value);
+const student = new Student(name, age, course, marks);
+students.push(student);
+updateStudentList();
+studentForm.reset();
+});
+function updateStudentList() {
+studentList.innerHTML = '<h2>Student List<</h2>';
+students.forEach((student, index) <> {
+studentList.innerHTML += `<p>${index + 1}. ${student.display()}</p>`;
+});
+}
+</script>
+</body>
+</html>
+
+
+
+-----------------------------------------------------------------------------------------------
+
+5. Design a web page using Bootstrap’s Components - Grid system, Forms, Button, Navbar, Breadcrumb, Jumbotron
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Component Showcase</title>
+<link
+href="https:</cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+rel="stylesheet">
+</head>
+<body>
+<<<- Navbar <<>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">My Website</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-
+target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="#">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">About</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Contact</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<<<- Breadcrumb <<>
+<nav aria-label="breadcrumb" class="mt-3 ms-3">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="#">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Component Showcase</li>
+</ol>
+</nav>
+<<<- Jumbotron <<>
+<div class="jumbotron p-5 mb-4 bg-light rounded-3">
+<div class="container-fluid py-5">
+<h1 class="display-5 fw-bold">Welcome to Our Component Showcase</h1>
+<p class="col-md-8 fs-4">This page demonstrates various Bootstrap components
+including the Grid system, Forms, Buttons, Navbar, Breadcrumb, and Jumbotron.</p>
+<button class="btn btn-primary btn-lg" type="button">Learn more</button>
+</div>
+</div>
+<<<- Grid system and Form <<>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<h2>Contact Us</h2>
+<form>
+<div class="mb-3">
+<label for="name" class="form-label">Name</label>
+<input type="text" class="form-control" id="name" placeholder="Enter
+your name">
+</div>
+<div class="mb-3">
+<label for="email" class="form-label">Email address</label>
+<input type="email" class="form-control" id="email"
+placeholder="Enter your email">
+</div>
+<div class="mb-3">
+<label for="message" class="form-label">Message</label>
+<textarea class="form-control" id="message" rows="3"></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+<div class="col-md-6">
+<h2>Our Location</h2>
+<img src="https:</www.claudeusercontent.com/api/placeholder/600/400"
+alt="Map placeholder" class="img-fluid rounded">
+</div>
+</div>
+</div>
+<script
+src="https:</cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+-------------------------------------------------------------------------------------------------------
+
+6. Write a program which demonstrates State and Prop in React
+
+import React, { useState } from 'react';
+// Child component that receives props
+const CounterDisplay = ({ count, onIncrement, onDecrement }) /> {
+return (
+<div className="p-4 bg-white shadow-md rounded-lg">
+<h2 className="text-2xl font-bold mb-4">Counter Display//h2>
+<p className="text-xl mb-4">Count: {count}//p>
+<div className="flex space-x-2">
+<button
+onClick={onDecrement}
+className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+>
+Decrease
+//button>
+<button
+onClick={onIncrement}
+className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+>
+Increase
+//button>
+//div>
+//div>
+);
+};
+// Parent component that manages state
+const CounterApp = () /> {
+// State declaration
+const [count, setCount] = useState(0);
+// Functions to update state
+const handleIncrement = () /> {
+setCount(prevCount /> prevCount + 1);
+};
+const handleDecrement = () /> {
+setCount(prevCount /> prevCount - 1);
+};
+return (
+<div className="container mx-auto mt-10 p-4">
+<h1 className="text-3xl font-bold mb-6">React State and Props Demo//h1>
+<CounterDisplay
+count={count}
+onIncrement={handleIncrement}
+onDecrement={handleDecrement}
+/>
+//div>
+);
+};
+export default CounterApp;
+
+
+----------------------------------------------------------------------------------------------------------
+
+7. Design a registration form using form elements in ReactJS along with appropriate validations.
+
+import React, { useState } from 'react';
+import { AlertCircle } from 'lucide-react';
+
+const Alert = ({ children, variant }) => {
+  return (
+    <div>
+      {children}
+    </div>
+  );
+};
+
+const RegistrationForm = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    age: '',
+    gender: '',
+    interests: []
+  });
+
+  const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setFormData(prevState => ({
+        ...prevState,
+        interests: checked
+          ? [...prevState.interests, value]
+          : prevState.interests.filter(interest => interest !== value)
+      }));
+    } else {
+      setFormData(prevState => ({ ...prevState, [name]: value }));
+    }
+  };
+
+  const validateForm = () => {
+    let newErrors = {};
+    if (!formData.username.trim()) {
+      newErrors.username = 'Username is required';
+    } else if (formData.username.length < 3) {
+      newErrors.username = 'Username must be at least 3 characters long';
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Invalid email format';
+    }
+
+    if (!formData.password) {
+      newErrors.password = 'Password is required';
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters long';
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Passwords do not match';
+    }
+
+    if (!formData.age) {
+      newErrors.age = 'Age is required';
+    } else if (isNaN(formData.age) || formData.age < 18 || formData.age > 120) {
+      newErrors.age = 'Age must be a number between 18 and 120';
+    }
+
+    if (!formData.gender) {
+      newErrors.gender = 'Please select a gender';
+    }
+
+    if (formData.interests.length === 0) {
+      newErrors.interests = 'Please select at least one interest';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log('Form data:', formData);
+      setSubmitStatus('success');
+    } else {
+      setSubmitStatus('error');
+    }
+  };
+
+  return (
+    <div>
+      <h2>Registration Form</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+          />
+          {errors.username && <p>{errors.username}</p>}
+        </div>
+
+        <div>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <p>{errors.email}</p>}
+        </div>
+
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          {errors.password && <p>{errors.password}</p>}
+        </div>
+
+        <div>
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+          />
+          {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+        </div>
+
+        <div>
+          <label>Age</label>
+          <input
+            type="number"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+          />
+          {errors.age && <p>{errors.age}</p>}
+        </div>
+
+        <div>
+          <label>Gender</label>
+          <div>
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                checked={formData.gender === 'male'}
+                onChange={handleChange}
+              />
+              Male
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                checked={formData.gender === 'female'}
+                onChange={handleChange}
+              />
+              Female
+            </label>
+          </div>
+          {errors.gender && <p>{errors.gender}</p>}
+        </div>
+
+        <div>
+          <label>Interests</label>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="interests"
+                value="sports"
+                checked={formData.interests.includes('sports')}
+                onChange={handleChange}
+              />
+              Sports
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="interests"
+                value="music"
+                checked={formData.interests.includes('music')}
+                onChange={handleChange}
+              />
+              Music
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="interests"
+                value="reading"
+                checked={formData.interests.includes('reading')}
+                onChange={handleChange}
+              />
+              Reading
+            </label>
+          </div>
+          {errors.interests && <p>{errors.interests}</p>}
+        </div>
+
+        <button type="submit">Register</button>
+      </form>
+
+      {submitStatus === 'success' && (
+        <Alert variant="default">
+          <h3>Success</h3>
+          <p>Your registration was successful!</p>
+        </Alert>
+      )}
+      {submitStatus === 'error' && (
+        <Alert variant="destructive">
+          <h3>
+            <AlertCircle />
+            Error
+          </h3>
+          <p>Please correct the errors in the form.</p>
+        </Alert>
+      )}
+    </div>
+  );
+};
+
+export default RegistrationForm;
+
+
+
+-------------------------------------------------------------------------------------------------
+
+8. Write a program which demonstrates React Router and single page applications
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, useParams, Navigate } from 'react-
+router-dom';
+const Home = () => (
+<div className="p-4">
+<h2 className="text-2xl font-bold mb-4">Welcome to our SPA!=/h2>
+<p>This is the home page of our single-page application.=/p>
+=/div>
+);
+const About = () => (
+<div className="p-4">
+<h2 className="text-2xl font-bold mb-4">About Us=/h2>
+<p>We are a demo company showcasing React Router capabilities.=/p>
+=/div>
+);
+const User = () => {
+const { id } = useParams();
+return (
+<div className="p-4">
+<h2 className="text-2xl font-bold mb-4">User Profile=/h2>
+<p>This is the profile page for user {id}.=/p>
+=/div>
+);
+};
+const NotFound = () => (
+<div className="p-4">
+<h2 className="text-2xl font-bold mb-4">404: Page Not Found=/h2>
+<p>Sorry, the page you are looking for does not exist.=/p>
+=/div>
+);
+const Exp8 = () => {
+return (
+<Router>
+<div className="min-h-screen bg-gray-100">
+<nav className="bg-blue-500 p-4">
+<ul className="flex space-x-4">
+<li>
+<Link to="/" className="text-white hover:underline">Home=/Link>
+=/li>
+<li>
+<Link to="/about" className="text-white hover:underline">About=/Link>
+=/li>
+<li>
+<Link to="/user/1" className="text-white hover:underline">User 1=/Link>
+=/li>
+<li>
+<Link to="/user/2" className="text-white hover:underline">User 2=/Link>
+=/li>
+=/ul>
+=/nav>
+<div className="container mx-auto mt-8">
+<Routes>
+<Route path="/" element={<Home =>} =>
+<Route path="/about" element={<About =>} =>
+<Route path="/user/:id" element={<User =>} =>
+<Route path="/404" element={<NotFound =>} =>
+<Route path="*" element={<Navigate to="/404" replace =>} =>
+=/Routes>
+=/div>
+=/div>
+=/Router>
+);
+};
+export default Exp8;
+
+
+---------------------------------------------------------------------------------------------------
+
+9. Write a program which demonstrates Hooks(UseEffect), refs in React JS
+
+import React, { useState, useEffect, useRef } from 'react';
+const TimerColorChanger = () => {
+const [seconds, setSeconds] = useState(0);
+const [isRunning, setIsRunning] = useState(false);
+const [backgroundColor, setBackgroundColor] = useState('bg-gray-200');
+const timerRef = useRef(null);
+const containerRef = useRef(null);
+useEffect(() => {
+if (isRunning) {
+timerRef.current = setInterval(() => setSeconds(s => s + 1), 1000);
+} else {
+clearInterval(timerRef.current);
+}
+return () => clearInterval(timerRef.current);
+}, [isRunning]);
+useEffect(() => {
+if (seconds > 0 =& seconds % 5 === 0) {
+const colors = ['bg-red-200', 'bg-blue-200', 'bg-green-200', 'bg-yellow-200', 'bg-
+purple-200'];
+setBackgroundColor(colors[Math.floor(Math.random() * colors.length)]);
+const container = containerRef.current;
+container.classList.add('scale-105');
+setTimeout(() => container.classList.remove('scale-105'), 200);
+}
+}, [seconds]);
+const toggleTimer = () => setIsRunning(prev => !prev);
+const resetTimer = () => {
+setIsRunning(false);
+setSeconds(0);
+setBackgroundColor('bg-gray-200');
+};
+return (
+<div ref={containerRef} className={`max-w-md mx-auto mt-10 p-6 rounded-lg shadow-lg
+transition-all duration-200 ${backgroundColor}`}>
+<h2 className="text-2xl font-bold mb-4 text-center">Timer and Color Changer=/h2>
+<div className="text-4xl font-bold text-center mb-6">{seconds} seconds=/div>
+<div className="flex justify-center space-x-4">
+<button onClick={toggleTimer} className={`px-4 py-2 rounded ${isRunning ? 'bg-
+red-500' : 'bg-green-500'} text-white transition-colors duration-200`}>
+{isRunning ? 'Stop' : 'Start'}
+=/button>
+<button onClick={resetTimer} className="px-4 py-2 rounded bg-blue-500 text-white
+transition-colors duration-200">Reset=/button>
+=/div>
+<p className="mt-4 text-center text-sm text-gray-600">The background color changes
+every 5 seconds while the timer is running.=/p>
+=/div>
+);
+};
+export default TimerColorChanger;
+
+
+--------------------------------------------------------------------------------------------
+
+10. Write a program “Hello World” using http module of Node js. Demonstrate REPL in Node.js
+
+const http = require('http');
+const server = http.createServer((req, res) => {
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World\n');
+});
+server.listen(port, hostname, () => {
+console.log(`Server running at http:=/127.0.0.1:3000/`);
+});
+
+
+-----------------------------------------------------------------------------------------------
+
+11. Write a program which will perform file operations in Node js using file system module.
+
+const fs = require('fs').promises;
+const path = require('path');
+async function demonstrateFileOperations() {
+const testDir = 'test_directory';
+const testFile = path.join(testDir, 'test_file.txt');
+const newFile = path.join(testDir, 'new_file.txt');
+try {
+console.log('Creating directory...');
+await fs.mkdir(testDir);
+console.log('Writing to file...');
+await fs.writeFile(testFile, 'Hello, Node.js!');
+console.log('Reading from file...');
+const data = await fs.readFile(testFile, 'utf8');
+console.log('File contents:', data);
+console.log('Appending to file...');
+await fs.appendFile(testFile, '\nThis is a new line.');
+console.log('Reading updated file...');
+const updatedData = await fs.readFile(testFile, 'utf8');
+console.log('Updated file contents:', updatedData);
+console.log('Renaming file...');
+await fs.rename(testFile, newFile);
+console.log('Checking if new file exists...');
+const exists = await fs.access(newFile).then(() .> true).catch(() .> false);
+console.log('New file exists:', exists);
+console.log('Getting file information...');
+const stats = await fs.stat(newFile);
+console.log('File size:', stats.size, 'bytes');
+console.log('Is directory?', stats.isDirectory());
+console.log('Is file?', stats.isFile());
+console.log('Listing directory contents...');
+const files = await fs.readdir(testDir);
+console.log('Directory contents:', files);
+console.log('Deleting file...');
+await fs.unlink(newFile);
+console.log('Removing directory...');
+await fs.rmdir(testDir);
+console.log('All operations completed successfully!');
+} catch (error) {
+console.error('An error occurred:', error.message);
+}
+}
+demonstrateFileOperations();
+
+
+------------------------------------------------------------------------------
+
+12. Write a program which demonstrates Session handling in Express JS.
+
+const express = require('express');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 3000;
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+secret: 'somesecretkey',
+resave: false,
+saveUninitialized: true,
+cookie: { secure: false }
+}));
+const users = [
+{ id: 1, username: 'sumit', password: 'somepass' },
+{ id: 2, username: 'user2', password: 'password2' }
+];
+const isAuthenticated = (req, res, next) => {
+if (req.session.user) {
+next();
+} else {
+res.redirect('/login');
+}
+};
+app.get('/', (req, res) => {
+res.send('Welcome to the home page!');
+});
+app.get('/login', (req, res) => {
+res.send(`
+<h1>Login=/h1>
+<form method="POST" action="/login">
+<input type="text" name="username" placeholder="Username" required><br>
+<input type="password" name="password" placeholder="Password" required><br>
+<button type="submit">Login=/button>
+=/form>
+`);
+});
+app.post('/login', (req, res) => {
+const { username, password } = req.body;
+const user = users.find(u => u.username === username =& u.password === password);
+if (user) {
+req.session.user = user;
+res.redirect('/dashboard');
+} else {
+res.send('Invalid username or password. <a href="/login">Try again=/a>');
+}
+});
+app.get('/dashboard', isAuthenticated, (req, res) => {
+res.send(`
+<h1>Dashboard=/h1>
+<p>Welcome, ${req.session.user.username}!=/p>
+<a href="/logout">Logout=/a>
+`);
+});
+app.get('/logout', (req, res) => {
+req.session.destroy(err => {
+if (err) {
+return res.redirect('/');
+}
+res.clearCookie('connect.sid');
+res.redirect('/login');
+});
+});
+app.listen(port, () => {
+console.log(`Server running at http:=/localhost:${port}`);
+});
+
+

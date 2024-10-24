@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            display() {
+                return `Name: ${this.name}, Age: ${this.age}`;
+            }
+        }
+        class Student extends Person {
+            constructor(name, age, course, marks) {
+                super(name, age);
+                this.course = course;
+                this.marks = marks;
+            }
+            display() {
+                return `${super.display()}, Course: ${this.course}, Marks: ${this.marks}`;
+            }
+        }
+        function showStudents() {
+            const students = [
+                new Student("Alice", 20, "Math", 85),
+                new Student("Bob", 22, "Science", 90)
+            ];
+            document.getElementById("student1").innerText = students[0].display();
+            document.getElementById("student2").innerText = students[1].display();
+        }
+    </script>
+</head>
+<body onload="showStudents()">
+    <h1>Student Information</h1>
+    <div id="student1"></div>
+    <div id="student2"></div>
+</body>
+</html>

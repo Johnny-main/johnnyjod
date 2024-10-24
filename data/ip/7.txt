@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script>
+        function calculateNormal(principal, rate, time) {
+            return (principal * rate * time) / 100;
+        }
+        const calculateArrow = (p, r, t) => (p * r * t) / 100;
+        function calculate() {
+            const p = parseFloat(document.getElementById("principal").value);
+            const r = parseFloat(document.getElementById("rate").value);
+            const t = parseFloat(document.getElementById("time").value);
+            const interest = calculateNormal(p, r, t);
+            const arrowInterest = calculateArrow(p, r, t);
+            document.getElementById("result").innerText = 
+                `Normal Function: ${interest.toFixed(2)}, Arrow Function: ${arrowInterest.toFixed(2)}`;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="principal" placeholder="Principal" step="0.1">
+    <input type="number" id="rate" placeholder="Rate (%)" step="0.1">
+    <input type="number" id="time" placeholder="Time (years)" step="0.1">
+    <button onclick="calculate()">Calculate Interest</button>
+    <h2 id="result"></h2>
+</body>
+</html>

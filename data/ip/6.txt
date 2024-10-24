@@ -1,0 +1,15 @@
+<html>
+<head>
+    <script>
+        function highlight() {
+            document.getElementById("text").style.fontWeight = "bold";
+            document.getElementById("body").style.backgroundColor = "yellow";
+            document.getElementById("text").style.color = "red";
+        }
+    </script>
+</head>
+<body id="body">
+    <p id="text">This is a sample paragraph.</p>
+    <button onclick="highlight()">Highlight</button>
+</body>
+</html>

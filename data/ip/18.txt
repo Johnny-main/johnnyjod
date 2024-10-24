@@ -1,0 +1,23 @@
+const fs = require("fs");
+const appendContent = `\nThis is additional content that will be appended to the file.`;
+
+fs.appendFile("abc.txt", appendContent, (err) => {
+    if (err) {
+        return console.error("Error:", err);
+    }
+    console.log(`Content appended successfully.`);
+
+    fs.rename("abc.txt", "xyz.txt", (err) => {
+        if (err) {
+            return console.error("Error:", err);
+        }
+        console.log(`File renamed.`);
+
+      fs.readFile("xyz.txt", (err,data) => {
+          if (err) {
+              return console.error("Error:", err);
+          }
+          console.log(data.toString());
+      });
+    });
+});
